@@ -116,17 +116,28 @@ const data = [
 const createArticles = (dataObj) => {
   // articleDiv is the div that will store all the article information such as date title and content
   const articleDiv = document.createElement('div');
+  articleDiv.classList.add('article');
 
-  // creating the article information elements
+  // after creating the article information elements i need to add the correct classes to the right elements
+  // i will also need to append all the elements onto the articleDiv
   const articleTitle = document.createElement('h2');
+  articleDiv.appendChild(articleTitle); 
+
   const articleDate = document.createElement('p');
+  articleDate.classList.add('date');
+  articleDiv.appendChild(articleDate); 
+
   const paragraph1 = document.createElement('p');
+  articleDiv.appendChild(paragraph1); 
+
   const paragraph2 = document.createElement('p');
+  articleDiv.appendChild(paragraph2); 
+
   const paragraph3 = document.createElement('p');
-  
+  articleDiv.appendChild(paragraph3); 
 
-  articleTitle.textContent = dataObj.title;
-
-
+  const expandButton = document.createElement('span');
+  expandButton.classList.add('expandButton');
+  articleDiv.appendChild(expandButton); 
 
 };
