@@ -50,10 +50,20 @@ const createMenu = menuArray => {
 
   const menuButton = document.querySelector('.menu-button');
   menuButton.classList.add('menu-button')
-  menuButton.addEventListener('click', () => menuDiv.classList.toggle('menu--open'));
+  menuButton.addEventListener('click', () => {
+    menuDiv.classList.toggle('menu--open');
+    menuAnimation();
+  });
+
+  // the function that animates the menu, will be called when the menu button gets clicked
+  const menuAnimation = () => {
+    !menuDiv.classList.contains('menu--open') ? TweenMax.to(menuDiv, 0.5, {left: -350}) : TweenMax.to(menuDiv, 0.5, {left: -50});
+  };
+  
 
   return menuDiv;
 };
+
 
 const body = document.querySelector('body');
 body.appendChild(createMenu(menuItems));
