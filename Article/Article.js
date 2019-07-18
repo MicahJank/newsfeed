@@ -163,7 +163,20 @@ const createArticles = (dataObj) => {
   // the button needs an event listener so that when the article is created it will have the ability to expand its content
   expandButton.addEventListener('click', () => {
     articleDiv.classList.toggle('article-open');
+    animateArticle();
+
+    
   });
+
+  const animateArticle = () => {
+    // articleDiv.classList.contains('article-open') ? TweenMax.from(articleDiv, 0.5, { height: '50' }) : TweenMax.to(articleDiv, 0.5, { height: '50' });
+    if (articleDiv.classList.contains('article-open')) {
+      TweenLite.set(articleDiv, { height: 'auto' });
+      TweenLite.from(articleDiv, 0.5, { height: '50' });
+    } else {
+      TweenLite.to(articleDiv, 0.5, { height: '50' });
+    }
+  };
   
   return articleDiv;
 };
