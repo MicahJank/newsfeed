@@ -157,7 +157,7 @@ const createArticles = (dataObj) => {
 
   const expandButton = document.createElement('span');
   expandButton.classList.add('expandButton');
-  expandButton.textContent = 'expand'; // since expand button does not have a corresponding data prop i can just fill the text content manually with a string
+  expandButton.textContent = 'Click to expand'; // since expand button does not have a corresponding data prop i can just fill the text content manually with a string
   articleDiv.appendChild(expandButton);
   
   // the button needs an event listener so that when the article is created it will have the ability to expand its content
@@ -171,9 +171,11 @@ const createArticles = (dataObj) => {
   const animateArticle = () => {
     // articleDiv.classList.contains('article-open') ? TweenMax.from(articleDiv, 0.5, { height: '50' }) : TweenMax.to(articleDiv, 0.5, { height: '50' });
     if (articleDiv.classList.contains('article-open')) {
+      expandButton.textContent = 'Click to close';
       TweenMax.set(articleDiv, { height: 'auto' });
       TweenMax.from(articleDiv, 0.5, { height: '50' });
     } else {
+      expandButton.textContent = 'Click to expand';
       TweenMax.to(articleDiv, 0.5, { height: '50' });
     }
   };
