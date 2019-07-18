@@ -171,10 +171,10 @@ const createArticles = (dataObj) => {
   const animateArticle = () => {
     // articleDiv.classList.contains('article-open') ? TweenMax.from(articleDiv, 0.5, { height: '50' }) : TweenMax.to(articleDiv, 0.5, { height: '50' });
     if (articleDiv.classList.contains('article-open')) {
-      TweenLite.set(articleDiv, { height: 'auto' });
-      TweenLite.from(articleDiv, 0.5, { height: '50' });
+      TweenMax.set(articleDiv, { height: 'auto' });
+      TweenMax.from(articleDiv, 0.5, { height: '50' });
     } else {
-      TweenLite.to(articleDiv, 0.5, { height: '50' });
+      TweenMax.to(articleDiv, 0.5, { height: '50' });
     }
   };
   
